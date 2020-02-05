@@ -1,0 +1,33 @@
+eureka:
+  client:
+    service-url:
+      default-zone: http://localhost:8761/eureka/
+server:
+  port: 2003
+spring:
+  application:
+    name: taxapy-usuario-server
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers:
+          - localhost:9092
+      bindings:
+          notification-in:
+            destination: notification
+            contentType: application/json
+          notification-out:
+            destination: notification
+            contentType: application/json
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: integrador123456789
+    url: jdbc:mysql://localhost:3306/usuario?serverTimezone=UTC
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
