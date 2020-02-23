@@ -1,4 +1,4 @@
-package com.taxapy.usuarioservice.controller;
+package com.taxappy.usuario.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -10,11 +10,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.taxapy.usuarioservice.model.Usuario;
+import com.taxappy.usuario.model.Direccion;
+import com.taxappy.usuario.model.Usuario;
+import com.taxappy.usuario.repository.DireccionRepository;
+import com.taxappy.usuario.repository.UsuarioRepository;
 
-import com.taxapy.usuarioservice.model.Direccion;
-import com.taxapy.usuarioservice.repository.DireccionRepository;
-import com.taxapy.usuarioservice.repository.UsuarioRepository;
+
 
 @RestController
 @RequestMapping("/")

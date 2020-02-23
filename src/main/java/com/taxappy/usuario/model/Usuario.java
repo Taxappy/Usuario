@@ -1,4 +1,4 @@
-package com.taxapy.usuarioservice.model;
+package com.taxappy.usuario.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

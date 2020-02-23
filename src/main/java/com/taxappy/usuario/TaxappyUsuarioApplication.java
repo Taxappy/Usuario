@@ -1,4 +1,4 @@
-package com.taxapy.usuarioservice;
+package com.taxappy.usuario;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -9,15 +9,16 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.client.RestTemplate;
 
+
 @SpringBootApplication
 @EnableEurekaClient // Enable eureka client.
 @EnableCircuitBreaker // Enable circuit breakers
-public class TaxapyUsuarioApplication {
+public class TaxappyUsuarioApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(TaxapyUsuarioApplication.class, args);
+		SpringApplication.run(TaxappyUsuarioApplication.class, args);
 	}
-
+	
 	@Configuration
 	class RestTemplateConfig {
 
