@@ -26,47 +26,48 @@ public class UsuarioController {
 	@Autowired
 	private DireccionRepository direccionRepository;
 
-	@GetMapping("/usuario/{cedula}")
-	public Usuario findByCedula(@PathVariable final int idUsuario) {
+	@GetMapping("/{idUsuario}")
+	public Usuario findByidUsuario(@PathVariable final int idUsuario) {
 		return usuarioRepository.findUsuarioByIdUsuario(idUsuario);
 	}
 
-	@PostMapping("/usuario")
-	public Usuario save(@RequestBody Usuario usuario) {
+	@GetMapping("/")
+	public Iterable<Usuario> AllUsuario() {
+		return usuarioRepository.findAll();
+	}
+
+	@PostMapping("/")
+	public Usuario saveUsuario(@RequestBody Usuario usuario) {
 		return usuarioRepository.save(usuario);
 
 	}
 
-	@DeleteMapping("/usuario")
-	public void delete(@RequestBody Usuario usuario) {
-		usuarioRepository.delete(usuario);
+	@DeleteMapping("/{idUsuario}")
+	public void deleteUsuario(@PathVariable final int idUsuario) {
+		usuarioRepository.deleteById(idUsuario);
 	}
 
-	@PostMapping("/usuario/direccion")
-	public Direccion save(@RequestBody Direccion direccion) {
+	@PostMapping("/direccion")
+	public Direccion saveDireccion(@RequestBody Direccion direccion) {
 		return direccionRepository.save(direccion);
 
 	}
 
-	@PatchMapping("/usuario/direccion")
-	public Direccion update(@RequestBody Direccion direccion) {
+	@PatchMapping("/direccion")
+	public Direccion updateDireccion(@RequestBody Direccion direccion) {
 		return direccionRepository.save(direccion);
 
 	}
 
-	@DeleteMapping("/usuario/direccion")
-	public void delete(@RequestBody Direccion direccion) {
-		direccionRepository.delete(direccion);
+	@DeleteMapping("/direccion/{codigoDireccion}")
+	public void deleteDireccion(@PathVariable final int codigoDireccion) {
+		direccionRepository.deleteById(codigoDireccion);
 
 	}
 
-	@GetMapping("/usuario/direccion")
+	@GetMapping("/direccion")
 	public Iterable<Direccion> allDireccion() {
 		return direccionRepository.findAll();
 	}
 
-	@GetMapping("/usuario/direccion/{direccion}")
-	public Direccion findByDireccion(@PathVariable final String direccion) {
-		return direccionRepository.findDireccionByDireccion(direccion);
-	}
 }
