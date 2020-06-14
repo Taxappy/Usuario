@@ -14,7 +14,6 @@ import lombok.NoArgsConstructor;
 public class Usuario {
 	@Id
 	private int idUsuario;
-	private String rol;
 	private String nombre;
 
 }
